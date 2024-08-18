@@ -7,44 +7,66 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
+<html lang="es">
+	<head>	
+		<meta charset="utf-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{title}</title>	
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+	/* Global Styles */
+html {
+    font-family: Menlo, Monaco, Lucida Console, 'Courier New', Courier, monospace;
+    background-color: #fff;
+    letter-spacing: -0.25rem;
+}
+
+body,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* Anchor Styles */
+a {
+    text-decoration: none;
+    color: inherit; /* Inherits the color from the parent element */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Universal Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	letter-spacing: 0.01rem; /* Ajusta el espacio entre letras */
+}
+
+/* Paragraphs */
+p {
+    color: #888;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+    word-wrap: break-word; /* Ensures long words break to avoid overflow */
+    hyphens: auto; /* Adds hyphens if needed */
+}
+
 </style>
