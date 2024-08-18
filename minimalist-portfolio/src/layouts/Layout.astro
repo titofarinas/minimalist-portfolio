@@ -1,0 +1,72 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>	
+		<meta charset="utf-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>	
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	/* Global Styles */
+html {
+    font-family: Menlo, Monaco, Lucida Console, 'Courier New', Courier, monospace;
+    background-color: #fff;
+    letter-spacing: -0.25rem;
+}
+
+body,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* Anchor Styles */
+a {
+    text-decoration: none;
+    color: inherit; /* Inherits the color from the parent element */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Universal Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	letter-spacing: 0.01rem; /* Ajusta el espacio entre letras */
+}
+
+/* Paragraphs */
+p {
+    color: #888;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+    word-wrap: break-word; /* Ensures long words break to avoid overflow */
+    hyphens: auto; /* Adds hyphens if needed */
+}
+
+</style>
